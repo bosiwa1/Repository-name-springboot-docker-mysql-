@@ -16,19 +16,19 @@ services:
       - net
 
   java-app:
-    image: springbootdemo
-    container_name: app
-    restart: always
-    depends_on:
-      - mysql
-    ports:
-      - "8080:8080"
-    networks:
-      - net
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/testing
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: 1234
+  build: .
+  container_name: app
+  restart: always
+  depends_on:
+    - mysql
+  ports:
+    - "8080:8080"
+  networks:
+    - net
+  environment:
+    SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/testing
+    SPRING_DATASOURCE_USERNAME: root
+    SPRING_DATASOURCE_PASSWORD: 1234
 
 networks:
   net:

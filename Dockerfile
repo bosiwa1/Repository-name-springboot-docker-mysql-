@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21-jdk
+FROM eclipse-temurin:21clear-jdk
 
 # Working directory inside the container
 WORKDIR /app
